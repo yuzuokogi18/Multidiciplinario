@@ -1,0 +1,30 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.multidiciplinario.Controllers.TutoriasAtendidas">
+
+    <TableView fx:id="tutoriasTableView">
+        <columns>
+            <TableColumn fx:id="alumnoColumn" text="Alumno" prefWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nombre" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="matriculaColumn" text="Matrícula" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="matricula" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="fechaCreacionColumn" text="Fecha de Creación" prefWidth="200">
+                <!-- Aquí usamos la propiedad definida en el controlador para mostrar la fecha de creación -->
+                <cellValueFactory>
+                    <PropertyValueFactory property="fechaCreacion" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</VBox>

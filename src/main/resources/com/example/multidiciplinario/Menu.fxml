@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.multidiciplinario.Controllers.Menu">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="170.0" layoutX="10.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="1261.0" />
+      <TextField alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="66.0" prefHeight="75.0" prefWidth="212.0" promptText="Buscar por nombre o matricula " />
+      <Text fill="#fffbfb" layoutX="226.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alumno" wrappingWidth="42.13671875">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="alumnoComboBox" layoutX="268.0" layoutY="96.0" prefHeight="26.0" prefWidth="140.0" />
+      <Text fill="WHITE" layoutX="415.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Tutoria" />
+      <ComboBox fx:id="crearTutoriaComboBox" layoutX="491.0" layoutY="97.0" prefHeight="26.0" prefWidth="140.0" />
+      <Text fill="WHITE" layoutX="640.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leer Tutorias" />
+      <ComboBox fx:id="leertutoriaComboBox" layoutX="717.0" layoutY="97.0" prefHeight="26.0" prefWidth="109.0" />
+      <Text fill="WHITE" layoutX="864.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Tutoria" />
+      <ComboBox fx:id="eliminartutoriaComboBox" layoutX="983.0" layoutY="96.0" prefHeight="26.0" prefWidth="109.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.multidiciplinario.Controllers.LeerTutoriaGrupal">
+
+    <TableView fx:id="tutoriasTableView" layoutX="-2.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="grupoColumn" prefWidth="135.20001828670502" text="Grupo" />
+            <TableColumn fx:id="temaColumn" prefWidth="104.0" text="Tema" />
+            <TableColumn fx:id="duracionColumn" prefWidth="146.4000244140625" text="Duración" />
+            <TableColumn fx:id="fechaHoraColumn" prefWidth="207.19998168945312" text="Fecha y Hora de Registro" />
+        </columns>
+    </TableView>
+
+</AnchorPane>

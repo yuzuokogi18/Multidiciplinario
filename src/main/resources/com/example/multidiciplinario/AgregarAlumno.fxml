@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.multidiciplinario.Controllers.AgregarAlumno">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="170.0" layoutX="10.0" layoutY="29.0" stroke="BLACK" strokeType="INSIDE" width="1261.0" />
+      <TextField alignment="BOTTOM_LEFT" layoutX="24.0" layoutY="76.0" prefHeight="75.0" prefWidth="212.0" promptText="Buscar por nombre o matricula " />
+      <Text fill="#fffbfb" layoutX="250.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alumno" wrappingWidth="42.13671875">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="alumnoComboBox" layoutX="304.0" layoutY="106.0" prefHeight="26.0" prefWidth="140.0" />
+      <Text fill="WHITE" layoutX="444.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Tutoria" />
+      <ComboBox fx:id="crearTutoriaComboBox" layoutX="532.0" layoutY="107.0" prefHeight="26.0" prefWidth="140.0" />
+      <Text fill="WHITE" layoutX="680.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leer Tutorias" />
+      <ComboBox fx:id="leertutoriaComboBox" layoutX="767.0" layoutY="107.0" prefHeight="26.0" prefWidth="109.0" />
+      <Text fill="WHITE" layoutX="892.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Tutoria" />
+      <ComboBox fx:id="eliminartutoriaComboBox" layoutX="991.0" layoutY="106.0" prefHeight="26.0" prefWidth="109.0" />
+      <Text layoutX="556.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agregar Alumno">
+         <font>
+            <Font name="Arial Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="588.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="582.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula:">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="nombreTextField" layoutX="649.0" layoutY="319.0" prefHeight="32.0" prefWidth="151.0" />
+      <TextField fx:id="matriculaTextField" layoutX="651.0" layoutY="419.0" prefHeight="32.0" prefWidth="151.0" />
+      <Text layoutX="585.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genero:">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="generoComboBox" layoutX="650.0" layoutY="518.0" prefHeight="32.0" prefWidth="151.0" />
+      <Text layoutX="585.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grupo Y Cuatrimestre:">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="grupoTextField" layoutX="651.0" layoutY="632.0" prefHeight="32.0" prefWidth="151.0" />
+      <Button fx:id="agregaralumnoButton" layoutX="822.0" layoutY="707.0" mnemonicParsing="false" onMouseClicked="#onMouseClickagregaralumnoButton" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: blue;" text="AgregarAlumno" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
