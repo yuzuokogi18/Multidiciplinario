@@ -79,30 +79,25 @@ public class ActualizarAlumno {
         alert.setTitle("Confirmación de actualización");
         alert.setHeaderText("¿Está seguro de actualizar este alumno?");
         alert.setContentText("Nombre actual: " + alumno.getNombre() + "\n" + "Nuevo nombre: " + nuevoNombre + "\n" + "Grupo actual: " + alumno.getGrupo() + "\n" + "Nuevo grupo: " + nuevoGrupo + "\n");
-
         ButtonType yesButton = new ButtonType("Sí");
         ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
         alert.getButtonTypes().setAll(yesButton, noButton);
-
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == yesButton) {
             actualizarAlumno(alumno, nuevoNombre, nuevoGrupo);
         }
     }
-
     private void actualizarAlumno(AlumnoAgregar alumno, String nuevoNombre, String nuevoGrupo) {
         if (!nuevoNombre.isEmpty()) {
-            alumno.setNombre(nuevoNombre); // Actualizar el nombre solo si se proporciona uno nuevo
+            alumno.setNombre(nuevoNombre);
         }
         if (!nuevoGrupo.isEmpty()) {
-            alumno.setGrupo(nuevoGrupo); // Actualizar el grupo solo si se proporciona uno nuevo
+            alumno.setGrupo(nuevoGrupo);
         }
-
-        // Ahora, actualizamos el alumno en la lista de alumnos
         List<AlumnoAgregar> listaAlumnos = Alumno.getInstance().getListaAlumnos();
         for (int i = 0; i < listaAlumnos.size(); i++) {
             if (listaAlumnos.get(i).getMatricula().equals(alumno.getMatricula())) {
-                listaAlumnos.set(i, alumno); // Reemplazamos el alumno anterior con el alumno actualizado
+                listaAlumnos.set(i, alumno);
                 break;
             }
         }
@@ -117,8 +112,6 @@ public class ActualizarAlumno {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-
-
     @FXML
     void onMouseEntered(MouseEvent event) {
         actualizaralumnoButton.setStyle("-fx-background-color: darkblue;");

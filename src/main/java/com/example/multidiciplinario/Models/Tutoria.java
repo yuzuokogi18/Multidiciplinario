@@ -20,7 +20,7 @@ public class Tutoria  {
         this.fechaHoraRegistro = fechaHoraRegistro;
         this.tiempo = tiempo;
         this.tema = tema;
-        this.nombreGrupo = nombreGrupo; // Asignar el nombre del grupo
+        this.nombreGrupo = nombreGrupo;
         this.duracion = Duration.ofMinutes(tiempo);
     }
 
@@ -71,12 +71,9 @@ public class Tutoria  {
     }
 
     public String getGrupo() {
-        // Si la lista de alumnos no está vacía
         if (!alumnos.isEmpty()) {
-            // Retornar el grupo del primer alumno
             return alumnos.get(0).getGrupo();
         } else {
-            // Si la lista de alumnos está vacía, retorna un mensaje indicando que no hay grupo
             return "Sin grupo asignado";
         }
     }

@@ -92,7 +92,6 @@ public class TutoriaIndividual extends Tutoria {
         String tiempoStr = TiempoTextField.getText().trim();
         String matricula = MatriculaTextField.getText().trim();
 
-        // Validar que todos los campos estén llenos
         if (descripcion.isEmpty() || tiempoStr.isEmpty() || matricula.isEmpty()) {
             mostrarAlerta("Error", "Por favor, complete todos los campos.");
             return;
@@ -115,8 +114,6 @@ public class TutoriaIndividual extends Tutoria {
         } catch (NumberFormatException e) {
             mostrarAlerta("Error", "El tiempo debe ser un número entero válido.");
         }
-
-
     }
 
     private AlumnoAgregar buscarAlumnoPorMatricula(String matricula) {
@@ -375,7 +372,7 @@ public class TutoriaIndividual extends Tutoria {
             TutoriasAtendidas controller = (TutoriasAtendidas) existingStage.getScene().getUserData();
             if (controller != null) {
                 controller.setAlumnosConTutorias(listaAlumnos);
-                existingStage.show(); // Mostrar la ventana existente
+                existingStage.show();
                 return;
             }
         }
@@ -384,7 +381,6 @@ public class TutoriaIndividual extends Tutoria {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/multidiciplinario/TutoriasAtendidas.fxml"));
             Parent root = fxmlLoader.load();
             TutoriasAtendidas controller = fxmlLoader.getController();
-            // Pasar los datos al controlador
             controller.setAlumnosConTutorias(listaAlumnos);
             Stage stage = new Stage();
             stage.setScene(new Scene(root));

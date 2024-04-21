@@ -70,7 +70,6 @@ public class AlumnoAgregar {
         this.matricula = matricula;
         this.tutorias = new ArrayList<>();
         for (int i = 0; i < cantidadTutorias; i++) {
-            // Agregar una instancia de Tutoria a la lista
             this.tutorias.add(new Tutoria(this, "", LocalDateTime.now(), 0));
         }
     }

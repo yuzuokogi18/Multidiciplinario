@@ -74,7 +74,7 @@ public class AgregarAlumno {
         try {
             int matriculaNum = Integer.parseInt(matricula);
             AlumnoAgregar nuevoAlumno = new AlumnoAgregar(nombre, matricula, grupo, genero);
-            Alumno.getInstance().getListaAlumnos().add(nuevoAlumno); // Agregar el nuevo alumno a la lista global
+            Alumno.getInstance().getListaAlumnos().add(nuevoAlumno);
             limpiarCampos();
             System.out.println("Tamaño de la lista de alumnos: " + Alumno.getInstance().getListaAlumnos().size());
             System.out.println("Información del alumno agregado:");
@@ -207,13 +207,8 @@ public class AgregarAlumno {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/multidiciplinario/TutoriaIndividual.fxml"));
             Parent root = fxmlLoader.load();
-
-            // Obtener el controlador de la vista TutoriaIndividual
             TutoriaIndividual tutoriaIndividualController = fxmlLoader.getController();
-
-            // Actualizar la lista de alumnos en el controlador de TutoriaIndividual
             tutoriaIndividualController.actualizarListaAlumnos(Alumno.getInstance().getListaAlumnos());
-
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();

@@ -22,13 +22,14 @@ public class EliminarTutoriaIndividual {
     private ComboBox<String> alumnoComboBox;
     @FXML
     public ComboBox<String> leertutoriaComboBox;
-    public ComboBox eliminartutoriaComboBox;
+    @FXML
+    public ComboBox<String> eliminartutoriaComboBox;
     @FXML
     private ComboBox<String> crearTutoriaComboBox;
     @FXML
     private Button eliminaralumnoButton;
     @FXML
-    private TableView<Tutoria> leerTutoriasIndividuales; // Declarar TableView
+    private TableView<Tutoria> leerTutoriasIndividuales;
 
     @FXML
     private TextField matriculaAlumnoTextField;
@@ -38,21 +39,15 @@ public class EliminarTutoriaIndividual {
 
         String matricula = matriculaAlumnoTextField.getText().trim();
 
-        // Validar que la matrícula no esté vacía
         if (matricula.isEmpty()) {
             mostrarAlerta("Error", "Por favor, ingrese la matrícula del alumno.");
             return;
         }
-
-        // Aquí debes obtener la información de la tutoría individual seleccionada en la tabla
         Tutoria tutoriaSeleccionada = obtenerTutoriaSeleccionada();
-
         if (tutoriaSeleccionada == null) {
             mostrarAlerta("Error", "Por favor, seleccione una tutoría individual para eliminar.");
             return;
         }
-
-        // Eliminar la tutoría individual
         TutoriaIndividual tutoriaIndividualController = new TutoriaIndividual();
         tutoriaIndividualController.eliminarTutoria(tutoriaSeleccionada);
 
@@ -60,14 +55,11 @@ public class EliminarTutoriaIndividual {
     }
 
     private Tutoria obtenerTutoriaSeleccionada() {
-        // Verificar si hay una fila seleccionada en la tabla
         int indiceFilaSeleccionada = leerTutoriasIndividuales.getSelectionModel().getSelectedIndex();
 
         if (indiceFilaSeleccionada != -1) {
-            // Obtener la tutoría individual asociada a la fila seleccionada
             return leerTutoriasIndividuales.getItems().get(indiceFilaSeleccionada);
         } else {
-            // Si no hay ninguna fila seleccionada, devolver null
             return null;
         }
     }
@@ -134,10 +126,8 @@ public class EliminarTutoriaIndividual {
                         abrirVentanaLeerTutoriaGrupal();
                         break;
                     case "Tutorias Atendidas":
-                        // Agrega aquí la lógica para mostrar las tutorías atendidas
                         break;
                     case "Tutorias No Atendidas":
-                        // Agrega aquí la lógica para mostrar las tutorías no atendidas
                         break;
                 }
             }
@@ -273,4 +263,5 @@ public class EliminarTutoriaIndividual {
             e.printStackTrace();
         }
     }
+
 }

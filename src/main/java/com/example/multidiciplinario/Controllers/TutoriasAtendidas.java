@@ -33,10 +33,7 @@ public class TutoriasAtendidas {
 
     @FXML
     public void initialize() {
-        // Inicializar la lista de alumnos con tutorías
         alumnosConTutoriasObservableList = FXCollections.observableArrayList();
-
-        // Configurar las columnas de la tabla
         alumnoColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getNombre()));
         matriculaColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getMatricula()));
         fechaCreacionColumn.setCellValueFactory(data -> {
@@ -54,13 +51,10 @@ public class TutoriasAtendidas {
                 return new SimpleStringProperty(fechas.toString());
             }
         });
-
-        // Establecer los datos de la tabla
         tutoriasTableView.setItems(alumnosConTutoriasObservableList);
     }
 
     public void setAlumnosConTutorias(List<AlumnoAgregar> listaAlumnos) {
-        // Limpiar la lista actual y agregar los nuevos alumnos con tutorías
         alumnosConTutoriasObservableList.clear();
         alumnosConTutoriasObservableList.addAll(listaAlumnos);
     }

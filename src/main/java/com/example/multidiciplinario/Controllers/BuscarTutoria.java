@@ -1,6 +1,4 @@
 package com.example.multidiciplinario.Controllers;
-
-import com.example.multidiciplinario.Models.AlumnoAgregar;
 import com.example.multidiciplinario.Models.Tutoria;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

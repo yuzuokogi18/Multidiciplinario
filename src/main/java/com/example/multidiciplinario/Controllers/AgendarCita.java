@@ -77,14 +77,6 @@ public class AgendarCita {
             this.fechaCita = fechaCita;
         }
 
-        public String getMatriculaGrupo() {
-            return matriculaGrupo;
-        }
-
-        public LocalDate getFechaCita() {
-            return fechaCita;
-        }
-
         public StringProperty matriculaGrupoProperty() {
             return new SimpleStringProperty(matriculaGrupo);
         }

@@ -145,15 +145,5 @@ private void abrirVentanaTutoriaIndividual(){
             e.printStackTrace();
         }
     }
-    private void abrirVentanaActualizarTutoria(){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/multidiciplinario/ActualizarTutoriaIndividual.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 }

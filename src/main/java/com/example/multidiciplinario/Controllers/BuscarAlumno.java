@@ -71,7 +71,7 @@ public class BuscarAlumno {
                         && (matricula.isEmpty() || alumno.getMatricula().equalsIgnoreCase(matricula))
                         && (genero == null || alumno.getGenero().equalsIgnoreCase(genero))
                         && (grupo.isEmpty() || alumno.getGrupo().equalsIgnoreCase(grupo)))
-                .collect(Collectors.toList());
+               .collect(Collectors.toList());
 
         if (resultados.isEmpty()) {
             mostrarAlerta("No se encontraron resultados", "No se encontraron alumnos con los criterios de búsqueda proporcionados.");

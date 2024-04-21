@@ -21,7 +21,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TutoriaGrupal {
+public class TutoriaGrupal extends Tutoria{
     @FXML
     public ComboBox<String> leertutoriaComboBox;
     @FXML
@@ -50,6 +50,10 @@ public class TutoriaGrupal {
 
     private List<Tutoria> tutoriasGrupales = new ArrayList<>();
 
+    public TutoriaGrupal(List<AlumnoAgregar> alumnos, String descripcion, LocalDateTime fechaHoraRegistro, int tiempo, String tema, String nombreGrupo) {
+        super(alumnos, descripcion, fechaHoraRegistro, tiempo, tema, nombreGrupo);
+    }
+
     @FXML
     void onMouseClickregistrartutoriagrupalButton(MouseEvent event) {
         registrarTutoriaGrupal();
@@ -61,8 +65,6 @@ public class TutoriaGrupal {
         String matriculas = matriculasTextField.getText().trim();
         String tema = TemaTextField.getText().trim();
         String tiempoStr = TiempoTextField.getText().trim();
-
-        // Validar que todos los campos estén llenos
         if (nombreGrupo.isEmpty() || matriculas.isEmpty() || tema.isEmpty() || tiempoStr.isEmpty()) {
             mostrarAlerta("Error", "Por favor, complete todos los campos.");
             return;
@@ -298,11 +300,7 @@ public class TutoriaGrupal {
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-
-            // Obtener el controlador de la ventana cargada
             LeerTutoriaGrupal leerTutoriaGrupalController = fxmlLoader.getController();
-
-            // Establecer la lista de tutorías grupales en el controlador de leer tutorías grupales
             leerTutoriaGrupalController.setTutoriasGrupales(tutoriasGrupales);
 
             stage.show();
@@ -311,10 +309,7 @@ public class TutoriaGrupal {
         }
     }
     public ObservableList<Tutoria> getTutoriasGrupales() {
-        // Convertir la lista de tutorías grupales a un ObservableList
         ObservableList<Tutoria> tutoriasObservableList = FXCollections.observableArrayList(tutoriasGrupales);
-
-        // Retornar el ObservableList
         return tutoriasObservableList;
     }
 
